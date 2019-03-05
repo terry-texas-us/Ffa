@@ -89,14 +89,6 @@ void CPrimInsert::Display(CDC* , bool)//pDC, bool bNodeDisplay)
 //	
 //	mspace.Return();
 //
-//#ifdef ENABLE_NODAL_VISUAL
-//	if(bNodeDisplay)
-//	{
-////		CPnts pts;
-////		((CPrimInsert*)this)->GetAllPts(pts);
-////		app.DisplayPoint(pDC, &pts, nodal::GetPrimMask((CPrim*)this));
-//	}
-//#endif
 }
 
 void CPrimInsert::DisplayOpenGL(bool)
