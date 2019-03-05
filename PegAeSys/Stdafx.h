@@ -6,33 +6,34 @@
 #define VC_EXTRALEAN		// Exclude rarely-used stuff from windows headers
 #endif
 
-#ifdef WINVER
-#undef WINVER
-#endif
-#define WINVER 0x0501
-//#ifndef WINVER				// Allow use of features specific to Windows 95 and WIndows NT 4 or later.
-//#define WINVER 0x0400		// Change this to the appropriate value to target Windows 98 and Windows 2000 or later.
-//#endif
+#include "targetver.h"
 
-#ifdef _WIN32_WINNT
-#undef _WIN32_WINNT
-#endif
-#define _WIN32_WINNT 0x0501
-//#ifndef _WIN32_WINNT		// Allow use of features specific to Windows NT 4 or later.
-//#define _WIN32_WINNT 0x0400	// Change this to the appropriate value to target Windows 98 and Windows 2000 or later.
-//#endif
+#define _ATL_CSTRING_EXPLICIT_CONSTRUCTORS	// some CString constructors will be explicit
 
-//#ifndef _WIN32_WINDOWS		// Allow use of features specific to Windows 98 or later.
-//#define _WIN32_WINDOWS 0x0410	// Change this to the appropriate value to target Windows Me or later.
-//#endif
+// turns off MFC's hiding of some common and often safely ignored warning messages
+#define _AFX_ALL_WARNINGS
 
-#ifdef _WIN32_IE
-#undef _WIN32_IE
+#include <afxwin.h> // MFC core and standard components
+#include <afxext.h> // MFC extensions
+
+#include <afxdisp.h> // MFC Automation classes
+
+#ifndef _AFX_NO_AFXCMN_SUPPORT
+#include <afxcmn.h> // MFC support for Windows Common Controls
+#endif // _AFX_NO_AFXCMN_SUPPORT
+
+#ifdef _UNICODE
+#if defined _M_IX86
+#pragma comment(linker,"/manifestdependency:\"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='x86' publicKeyToken='6595b64144ccf1df' language='*'\"")
+#elif defined _M_X64
+#pragma comment(linker,"/manifestdependency:\"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='amd64' publicKeyToken='6595b64144ccf1df' language='*'\"")
+#else
+#pragma comment(linker,"/manifestdependency:\"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='*' publicKeyToken='6595b64144ccf1df' language='*'\"")
 #endif
-#define _WIN32_IE 0x0501
-//#ifndef _WIN32_IE			// Allow use of features specific to IE 4.0 or later
-//#define _WIN32_IE 0x0400	// Change to the appropriate value to target IE 5.0 or later
-//#endif
+#endif
+
+#include <cfloat>
+#include <cmath>
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // DEFINES
@@ -43,18 +44,19 @@
 //#define ENABLE_CURSOR					// cursor functionality
 //#define ENABLE_BITMAP_PRIM			// bitmap primitive
 //#define ENABLE_DWG_EXPORT				// dwg export
-#define ENABLE_NODAL_VISUAL			// nodal visual
 ////////////////////////////////////////////////////////////////////////////////////////
 
-#define _AFX_ALL_WARNINGS
-
-#include <afxwin.h>
-#include <afxext.h>
-#include <afxdisp.h>
 #include <afxadv.h>
 #include <afxtempl.h>
 
 #include <windowsx.h>
+
+#ifndef _CRTDBG_MAP_ALLOC
+#define _CRTDBG_MAP_ALLOC
+#endif // _CRTDBG_MAP_ALLOC
+
+#include <stdlib.h>
+#include <crtdbg.h>
 
 #include <ddeml.h>
 #include <direct.h>
@@ -62,9 +64,6 @@
 #include <shlobj.h>
 #include <shlwapi.h>
 #include <commdlg.h>
-
-#include <cfloat>
-#include <cmath>
 
 /////////////////////////////////////////////////////
 #include <iostream>
@@ -97,41 +96,25 @@ using std::ofstream;
 
 /////////////////////////////////////////////////////////////////////////////
 #include "OdaCommon.h"
-#include "OdToolKit.h"
-#include "OdaDefs.h"
-#include "OdAlloc.h"
-#include "OdString.h"
 
+#include "Ge/GePoint3d.h"
+
+#include "DbBlockTable.h"
+#include "DbBlockTableRecord.h"
 #include "DbDatabase.h"
+#include "DbLayerTable.h"
+#include "DbLayerTableRecord.h"
+#include "DbLinetypeTable.h"
+#include "DbLinetypeTableRecord.h"
+#include "DbViewport.h"
+#include "DbViewportTable.h"
+#include "DbViewportTableRecord.h"
+
 #include "DbEntity.h"
-#include "DbSystemServices.h"
-#include "DbHostAppServices.h"
-#include "DbObject.h"
-#include "DbObjectId.h"
 #include "DbObjectIterator.h"
 #include "DbGsManager.h"
 #include "DbDictionary.h"
-#include "DbXrecord.h"
-#include "DbDimAssoc.h"
-#include "DbSymbolTable.h"
-#include "DbBlockTable.h"
-#include "DbBlockTableRecord.h"
-#include "Db2dPolyline.h"
 #include "DbMlineStyle.h"
-#include "DbLayerTable.h"
-#include "DbLayerTableRecord.h"
-#include "DbSymbolTable.h"
-#include "DbViewportTableRecord.h"
-#include "DbViewportTable.h"
-#include "DbViewTable.h"
-#include "DbViewTableRecord.h"
-#include "DbLinetypeTable.h"
-#include "DbLinetypeTableRecord.h"
-#include "DbUCSTableRecord.h"
-#include "DbViewport.h"
-
-#include "RxObjectImpl.h"
-#include "Gs/Gs.h"
 
 #include "..\\CBitmapEx\\BitmapEx.h"
 
@@ -203,7 +186,6 @@ UINT AFXAPI HashKey(CString& str);
 #include "PrintState.h"
 #include "PlotState.h"
 #include "FilePeg.h"
-#include "FilePeg2000.h"
 #include "FileTracing.h"
 #include "PegReg.h"
 #include "QuadTree.h"
