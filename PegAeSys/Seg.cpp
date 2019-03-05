@@ -147,8 +147,6 @@ int CSeg::GetBlockRefCount(const CString& strBlkNam) const
 
 void CSeg::GetExtents(CPnt& ptMin, CPnt& ptMax, const CTMat& tm) const
 {
-	// MAK - TODO - whether markers are displayed or not
-
 	POSITION pos = GetHeadPosition();
 	while (pos != 0)
 	{
@@ -259,7 +257,6 @@ void CSeg::PenTranslation(WORD wCols, PENCOLOR* pColNew, PENCOLOR* pCol)
 		{
 			if (pPrim->PenColor() == pCol[w])
 			{
-//				pPrim->PenColor() = pColNew[w];
 				pPrim->SetPenColor(pColNew[w]);
 				break;
 			}
@@ -357,7 +354,6 @@ void CSeg::RemovePrims()
 	while (pos != 0)
 	{
 		CPrim* pPrim = GetNext(pos);
-//		pPrim = 0;
 		delete (pPrim);
 	}
 	RemoveAll();
@@ -381,7 +377,6 @@ void CSeg::SetBitmapActLikePrim(bool bActLikePrim)
 				detsegs.Remove(this);
 		}
 	}
-
 }
 
 void CSeg::SortTextOnY()
@@ -521,11 +516,6 @@ void CSeg::Write(OdDbObjectId LayerId, OdDbDatabasePtr pDb)
 		OdDbEntityPtr pEnt;
 
 		CPrim *pPrim = GetNext(pos);
-
-		// mak - 
-//		CString str;
-//		pPrim->FormatGeometry(str);
-//		MessageBox(0, str, 0, 0);
 
 		pPrim->Write(pEnt, pDb);
 	
