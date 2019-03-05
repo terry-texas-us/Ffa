@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PegAeSys", "PegAeSys\PegAeSys.vcproj", "{AC35E5A2-A6D1-499C-8274-4E8F18E3F468}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		vc9dll|Win32 = vc9dll|Win32
+		vc9dlldbg|Win32 = vc9dlldbg|Win32
+		vc9mtdbg|Win32 = vc9mtdbg|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC35E5A2-A6D1-499C-8274-4E8F18E3F468}.vc9dll|Win32.ActiveCfg = vc9dll|Win32
+		{AC35E5A2-A6D1-499C-8274-4E8F18E3F468}.vc9dll|Win32.Build.0 = vc9dll|Win32
+		{AC35E5A2-A6D1-499C-8274-4E8F18E3F468}.vc9dlldbg|Win32.ActiveCfg = vc9dlldbg|Win32
+		{AC35E5A2-A6D1-499C-8274-4E8F18E3F468}.vc9dlldbg|Win32.Build.0 = vc9dlldbg|Win32
+		{AC35E5A2-A6D1-499C-8274-4E8F18E3F468}.vc9mtdbg|Win32.ActiveCfg = vc9mtdbg|Win32
+		{AC35E5A2-A6D1-499C-8274-4E8F18E3F468}.vc9mtdbg|Win32.Build.0 = vc9mtdbg|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
