@@ -241,6 +241,7 @@
 				TreatWChar_tAsBuiltInType="true"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
+				AssemblerListingLocation="$(IntDir)\"
 				WarningLevel="3"
 				DebugInformationFormat="4"
 			/>
@@ -267,6 +268,95 @@
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(TargetDir)$(TargetName).pdb"
 				SubSystem="2"
+				RandomizedBaseAddress="2"
+				DataExecutionPrevention="2"
+				TargetMachine="1"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="vc9mt|Win32"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="1"
+			UseOfMFC="1"
+			CharacterSet="2"
+			ManagedExtensions="0"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				InlineFunctionExpansion="0"
+				FavorSizeOrSpeed="0"
+				OmitFramePointers="false"
+				AdditionalIncludeDirectories="E:\Teigha\09\TD_vc9mt\TD\Include;E:\Teigha\09\TD_vc9mt\TD\Include\Gi;E:\Teigha\09\TD_vc9mt\TD\Extensions\ExServices;CxImage;PDF2Image"
+				PreprocessorDefinitions="WIN32;_WIN32;_CRTDBG_MAP_ALLOC;_VC9;_WINDOWS;_MT;_CRT_NOFORCE_MANIFEST;_STL_NOFORCE_MANIFEST;_DEBUG;ODA_LICENSING_ENABLED;ODAMFC_EXPORT_SYMBOL;ODA_DISABLE_DDALLOC;_SISL_IMPL_"
+				ExceptionHandling="1"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="1"
+				EnableFunctionLevelLinking="false"
+				TreatWChar_tAsBuiltInType="true"
+				RuntimeTypeInfo="true"
+				UsePrecompiledHeader="2"
+				WarningLevel="3"
+				DebugInformationFormat="4"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				Culture="1033"
+				AdditionalIncludeDirectories="C:\ffa\Fonts;C:\ffa\Cursors"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="TD_ExamplesCommon.lib TD_Db.lib TD_Gs.lib TD_Gi.lib TD_Root.lib TD_Ge.lib TD_DbRoot.lib TD_SpatialIndex.lib"
+				ShowProgress="2"
+				LinkIncremental="2"
+				SuppressStartupBanner="true"
+				AdditionalLibraryDirectories="E:\Teigha\09\TD_vc9mt\lib\vc9mt;CxImage;PDF2Image"
+				IgnoreAllDefaultLibraries="false"
+				IgnoreDefaultLibraryNames=""
 				RandomizedBaseAddress="2"
 				DataExecutionPrevention="2"
 				TargetMachine="1"

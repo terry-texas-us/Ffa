@@ -141,7 +141,7 @@ void OdGiDumperImpl::output(const OdGiTextStyle& textStyle)
   }
   else
   {
-    output(OD_T("Filename"),                shortenPath(textStyle.ttfdecriptor().fileName()));
+    output(OD_T("Filename"),                shortenPath(textStyle.ttfdescriptor().fileName()));
     output(OD_T("BigFont Filename"),        shortenPath(textStyle.bigFontFileName()));
   }
   output(OD_T("Shape File"),                toString(textStyle.isShape()));

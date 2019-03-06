@@ -1,14 +1,74 @@
-*.exe
-*.obj
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+vc9dlldbg/
+vc9dlldbg/
+vc9mtdbg/
+vc9mtdbg/
+
+# Visual Studio 2015/2017 cache/options directory
+.vs/
+
+# Files built by Visual Studio
+*_i.c
+*_p.c
+*_h.h
 *.ilk
+*.meta
+*.obj
+*.iobj
+*.pch
+*.pdb
+*.ipdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
 *.tlb
 *.tli
 *.tlh
 *.tmp
-*.rsp
-*.pgc
-*.pgd
-*.meta
-*.pch
+*.tmp_proj
+*_wpftmp.csproj
+*.log
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+
+# Visual C++ cache files
+ipch/
+*.aps
+*.ncb
+*.opendb
+*.opensdf
+*.sdf
+*.cachefile
+*.VC.db
+*.VC.VC.opendb
+
+# Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
+*.sap
+
+PegAEsys Shadow Files/*.peg
+*.exe
 *.idb
-*.pdb
