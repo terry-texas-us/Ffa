@@ -9,3 +9,6 @@
 *.pgc
 *.pgd
 *.meta
+*.pch
+*.idb
+*.pdb
