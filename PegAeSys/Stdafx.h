@@ -2,6 +2,9 @@
 
 #pragma once
 
+// To use (Visual Leak Detector for Visual C++ 2008-2015 https://kinddragon.github.io/vld/) uncomment
+//#include "vld.h"
+
 #ifndef VC_EXTRALEAN
 #define VC_EXTRALEAN		// Exclude rarely-used stuff from windows headers
 #endif
@@ -50,13 +53,6 @@
 #include <afxtempl.h>
 
 #include <windowsx.h>
-
-#ifndef _CRTDBG_MAP_ALLOC
-#define _CRTDBG_MAP_ALLOC
-#endif // _CRTDBG_MAP_ALLOC
-
-#include <stdlib.h>
-#include <crtdbg.h>
 
 #include <ddeml.h>
 #include <direct.h>

@@ -938,7 +938,7 @@ void CMainFrame::OnDestroy(HWND hwnd)
 	app.LineFontRelease();
 	app.StrokeFontRelease();
 	
-//	dde::Uninitialize();
+	dde::Uninitialize();
 
 	PostQuitMessage(0); 		// Force WM_QUIT message to terminate message loop
 }
