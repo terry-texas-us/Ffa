@@ -658,10 +658,6 @@
 				>
 			</File>
 			<File
-				RelativePath=".\FilePeg2000.cpp"
-				>
-			</File>
-			<File
 				RelativePath=".\FileTracing.cpp"
 				>
 			</File>
@@ -1176,10 +1172,6 @@
 			</File>
 			<File
 				RelativePath=".\FilePeg.h"
-				>
-			</File>
-			<File
-				RelativePath=".\FilePeg2000.h"
 				>
 			</File>
 			<File
