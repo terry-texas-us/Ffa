@@ -42,7 +42,7 @@ LRESULT CALLBACK SubProcDraw(HWND hwnd, UINT anMsg, WPARAM wParam, LPARAM lParam
 		{
 			case ID_HELP_KEY:
 			{
-				WinHelp(hwnd, "peg.hlp", HELP_KEY, (DWORD) (LPSTR) "DRAW");
+				HtmlHelp(hwnd, app.GetAppPath() + "\\PegAeSys.chm::/Draw.htm", HH_DISPLAY_TOPIC, NULL);
 				return 0;
 			}
 			case ID_OP0:

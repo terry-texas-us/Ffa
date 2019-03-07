@@ -75,6 +75,12 @@ LRESULT CALLBACK SubProcLPD(HWND hwnd, UINT anMsg, WPARAM wParam, LPARAM lParam)
 				ptPrv = ptCur;
 				break;
 				
+            case ID_HELP_KEY:
+			{
+                HtmlHelp(hwnd, app.GetAppPath() + "\\PegAeSys.chm::/LowPressureDuct.htm", HH_DISPLAY_TOPIC, NULL);
+				return 0;
+			}
+
 			case ID_OP0:
 				lpd::SetOptions(&dWid[1], &dDep[1]);
 				break;

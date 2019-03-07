@@ -72,10 +72,10 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="TD_ExamplesCommon.lib TD_Key.lib TD_Db.lib TD_Gs.lib TD_Gi.lib TD_Root.lib TD_Ge.lib TD_DbRoot.lib TD_Alloc.lib"
+				AdditionalDependencies="TD_ExamplesCommon.lib TD_Key.lib TD_Db.lib TD_Gs.lib TD_Gi.lib TD_Root.lib TD_Ge.lib TD_DbRoot.lib TD_Alloc.lib htmlhelp.lib"
 				LinkIncremental="0"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="E:\Teigha\09\TD_vc9dlldbg\lib\vc9dlldbg"
+				AdditionalLibraryDirectories="E:\Teigha\09\TD_vc9dlldbg\lib\vc9dlldbg;&quot;C:\Program Files (x86)\HTML Help Workshop\lib&quot;"
 				IgnoreAllDefaultLibraries="false"
 				IgnoreDefaultLibraryNames=""
 				GenerateDebugInformation="true"
@@ -164,11 +164,11 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="TD_ExamplesCommon.lib TD_Key.lib TD_Db.lib TD_Gs.lib TD_Gi.lib TD_Root.lib TD_Ge.lib TD_DbRoot.lib TD_Alloc.lib"
+				AdditionalDependencies="TD_ExamplesCommon.lib TD_Key.lib TD_Db.lib TD_Gs.lib TD_Gi.lib TD_Root.lib TD_Ge.lib TD_DbRoot.lib TD_Alloc.lib htmlhelp.lib"
 				ShowProgress="1"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="E:\Teigha\09\TD_vc9dll\lib\vc9dll"
+				AdditionalLibraryDirectories="E:\Teigha\09\TD_vc9dll\lib\vc9dll;&quot;C:\Program Files (x86)\HTML Help Workshop\lib&quot;"
 				IgnoreAllDefaultLibraries="false"
 				IgnoreDefaultLibraryNames=""
 				GenerateDebugInformation="true"
@@ -258,11 +258,11 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="TD_ExamplesCommon.lib TD_Db.lib TD_Gs.lib TD_Gi.lib TD_Root.lib TD_Ge.lib TD_DbRoot.lib TD_SpatialIndex.lib"
+				AdditionalDependencies="TD_ExamplesCommon.lib TD_Db.lib TD_Gs.lib TD_Gi.lib TD_Root.lib TD_Ge.lib htmlhelp.lib TD_DbRoot.lib TD_SpatialIndex.lib"
 				ShowProgress="2"
 				LinkIncremental="0"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="E:\Teigha\09\TD_vc9mtdbg\lib\vc9mtdbg"
+				AdditionalLibraryDirectories="E:\Teigha\09\TD_vc9mtdbg\lib\vc9mtdbg;&quot;C:\Program Files (x86)\HTML Help Workshop\lib&quot;"
 				IgnoreAllDefaultLibraries="false"
 				IgnoreDefaultLibraryNames=""
 				GenerateDebugInformation="true"
@@ -349,10 +349,10 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="TD_ExamplesCommon.lib TD_Db.lib TD_Gs.lib TD_Gi.lib TD_Root.lib TD_Ge.lib TD_DbRoot.lib TD_SpatialIndex.lib"
+				AdditionalDependencies="TD_ExamplesCommon.lib TD_Db.lib TD_Gs.lib TD_Gi.lib TD_Root.lib TD_Ge.lib TD_DbRoot.lib TD_SpatialIndex.lib htmlhelp.lib"
 				ShowProgress="2"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="E:\Teigha\09\TD_vc9mt\lib\vc9mt;CxImage;PDF2Image"
+				AdditionalLibraryDirectories="E:\Teigha\09\TD_vc9mt\lib\vc9mt;CxImage;PDF2Image;&quot;C:\Program Files (x86)\HTML Help Workshop\lib&quot;"
 				IgnoreAllDefaultLibraries="false"
 				IgnoreDefaultLibraryNames=""
 				RandomizedBaseAddress="2"
@@ -1615,7 +1615,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\Ffa-A\PegAeSys\TCharDefs.h"
+				RelativePath=".\TCharDefs.h"
 				>
 			</File>
 			<File

@@ -47,6 +47,11 @@ LRESULT CALLBACK SubProcDraw2(HWND hwnd, UINT anMsg, WPARAM wParam, LPARAM lPara
 		
 		switch (LOWORD(wParam))
 		{
+			case ID_HELP_KEY:
+			{
+                HtmlHelp(hwnd, app.GetAppPath() + "\\PegAeSys.chm::/DoubleLine.htm", HH_DISPLAY_TOPIC, NULL);
+				return 0;
+			}
 			// a test for non-zero z used to result in error message if 0-9 
 			case ID_OP0:
 				pDoc->SetOptionsFocus(IDC_DRAW2_WIDTH);

@@ -24,7 +24,7 @@ LRESULT CALLBACK SubProcTrapAdd(HWND hwnd, UINT nMsg, WPARAM wParam, LPARAM lPar
 			switch (LOWORD(wParam))
 			{
 				case ID_HELP_KEY:
-					WinHelp(hwnd, "peg.hlp", HELP_KEY, (DWORD) (LPSTR) szKey);
+                    HtmlHelp(hwnd, app.GetAppPath() + "\\PegAeSys.chm::/Trap.htm", HH_DISPLAY_TOPIC, NULL);
 					return 0;
 				
 				case ID_OP0:
