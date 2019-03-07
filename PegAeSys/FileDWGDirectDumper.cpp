@@ -62,8 +62,6 @@
 #include "Db3dSolid.h"
 #include "DbLeader.h"
 
-//#include "GiWorldDrawDumper.h"
-
 int ExplodeTextFragments(OdDbMTextFragment *, void *);
 
 //////////////////////////////////////////////////////////////////////

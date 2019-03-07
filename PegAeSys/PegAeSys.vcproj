@@ -46,7 +46,7 @@
 				InlineFunctionExpansion="0"
 				FavorSizeOrSpeed="0"
 				OmitFramePointers="false"
-				AdditionalIncludeDirectories="E:\Teigha\09\TD_vc9dlldbg\TD\Include;E:\Teigha\09\TD_vc9dlldbg\TD\Include\Gi;E:\Teigha\09\TD_vc9dlldbg\TD\Extensions\ExServices"
+				AdditionalIncludeDirectories="E:\Teigha\09\TD_vc9dlldbg\TD\Include;E:\Teigha\09\TD_vc9dlldbg\TD\Include\Gi;E:\Teigha\09\TD_vc9dlldbg\TD\Extensions\ExServices;E:\Teigha\09\TD_vc9dlldbg\td\Examples\Common"
 				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_MT;_DLL;_CRT_SECURE_NO_DEPRECATE;_WIN32;_CRT_NOFORCE_MANIFEST;_STL_NOFORCE_MANIFEST;ODA_LICENSING_ENABLED;_CRTDBG_MAP_ALLOC;ODAMFC_EXPORT_SYMBOL;ODA_DISABLE_DDALLOC;_SISL_IMPL_;_TOOLKIT_IN_DLL_"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
@@ -73,7 +73,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="TD_ExamplesCommon.lib TD_Key.lib TD_Db.lib TD_Gs.lib TD_Gi.lib TD_Root.lib TD_Ge.lib TD_DbRoot.lib TD_Alloc.lib"
-				LinkIncremental="2"
+				LinkIncremental="0"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="E:\Teigha\09\TD_vc9dlldbg\lib\vc9dlldbg"
 				IgnoreAllDefaultLibraries="false"
@@ -139,7 +139,7 @@
 				EnableIntrinsicFunctions="true"
 				OmitFramePointers="false"
 				WholeProgramOptimization="true"
-				AdditionalIncludeDirectories="E:\Teigha\09\TD_vc9dll\td\Include;E:\Teigha\09\TD_vc9dll\td\Include\Gi;E:\Teigha\09\TD_vc9dll\td\Extensions\ExServices"
+				AdditionalIncludeDirectories="E:\Teigha\09\TD_vc9dll\td\Include;E:\Teigha\09\TD_vc9dll\td\Include\Gi;E:\Teigha\09\TD_vc9dll\td\Extensions\ExServices;E:\Teigha\09\TD_vc9dll\td\Examples\Common"
 				PreprocessorDefinitions="_MT;_DLL;_CRT_SECURE_NO_DEPRECATE;WIN32;_WIN32;_WINDOWS;_CRT_NOFORCE_MANIFEST;_STL_NOFORCE_MANIFEST;NDEBUG;ODA_LICENSING_ENABLED;_CRTDBG_MAP_ALLOC;ODAMFC_EXPORT_SYMBOL;ODA_DISABLE_DDALLOC;_SISL_IMPL_;_TOOLKIT_IN_DLL_"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="0"
@@ -231,7 +231,7 @@
 				InlineFunctionExpansion="0"
 				FavorSizeOrSpeed="0"
 				OmitFramePointers="false"
-				AdditionalIncludeDirectories="E:\Teigha\09\TD_vc9mtdbg\TD\Include;E:\Teigha\09\TD_vc9mtdbg\TD\Include\Gi;E:\Teigha\09\TD_vc9mtdbg\TD\Extensions\ExServices"
+				AdditionalIncludeDirectories="E:\Teigha\09\TD_vc9mtdbg\TD\Include;E:\Teigha\09\TD_vc9mtdbg\TD\Include\Gi;E:\Teigha\09\TD_vc9mtdbg\TD\Extensions\ExServices;E:\Teigha\09\TD_vc9mtdbg\td\Examples\Common"
 				PreprocessorDefinitions="WIN32;_WIN32;_CRTDBG_MAP_ALLOC;_VC9;_WINDOWS;_MT;_CRT_NOFORCE_MANIFEST;_STL_NOFORCE_MANIFEST;_DEBUG;ODA_LICENSING_ENABLED;ODAMFC_EXPORT_SYMBOL;ODA_DISABLE_DDALLOC;_SISL_IMPL_"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
@@ -260,7 +260,7 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="TD_ExamplesCommon.lib TD_Db.lib TD_Gs.lib TD_Gi.lib TD_Root.lib TD_Ge.lib TD_DbRoot.lib TD_SpatialIndex.lib"
 				ShowProgress="2"
-				LinkIncremental="2"
+				LinkIncremental="0"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="E:\Teigha\09\TD_vc9mtdbg\lib\vc9mtdbg"
 				IgnoreAllDefaultLibraries="false"
@@ -325,17 +325,16 @@
 				InlineFunctionExpansion="0"
 				FavorSizeOrSpeed="0"
 				OmitFramePointers="false"
-				AdditionalIncludeDirectories="E:\Teigha\09\TD_vc9mt\TD\Include;E:\Teigha\09\TD_vc9mt\TD\Include\Gi;E:\Teigha\09\TD_vc9mt\TD\Extensions\ExServices;CxImage;PDF2Image"
-				PreprocessorDefinitions="WIN32;_WIN32;_CRTDBG_MAP_ALLOC;_VC9;_WINDOWS;_MT;_CRT_NOFORCE_MANIFEST;_STL_NOFORCE_MANIFEST;_DEBUG;ODA_LICENSING_ENABLED;ODAMFC_EXPORT_SYMBOL;ODA_DISABLE_DDALLOC;_SISL_IMPL_"
+				AdditionalIncludeDirectories="E:\Teigha\09\TD_vc9mt\TD\Include;E:\Teigha\09\TD_vc9mt\TD\Include\Gi;E:\Teigha\09\TD_vc9mt\TD\Extensions\ExServices;E:\Teigha\09\TD_vc9mt\td\Examples\Common"
+				PreprocessorDefinitions="WIN32;_WIN32;_VC9;_WINDOWS;_MT;_CRT_NOFORCE_MANIFEST;_STL_NOFORCE_MANIFEST;ODA_LICENSING_ENABLED;ODAMFC_EXPORT_SYMBOL;ODA_DISABLE_DDALLOC;_SISL_IMPL_"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
-				RuntimeLibrary="1"
+				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="false"
 				TreatWChar_tAsBuiltInType="true"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
-				WarningLevel="3"
-				DebugInformationFormat="4"
+				WarningLevel="4"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -352,7 +351,6 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="TD_ExamplesCommon.lib TD_Db.lib TD_Gs.lib TD_Gi.lib TD_Root.lib TD_Ge.lib TD_DbRoot.lib TD_SpatialIndex.lib"
 				ShowProgress="2"
-				LinkIncremental="2"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="E:\Teigha\09\TD_vc9mt\lib\vc9mt;CxImage;PDF2Image"
 				IgnoreAllDefaultLibraries="false"
@@ -1006,6 +1004,14 @@
 						UsePrecompiledHeader="1"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="vc9mt|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\StringExtra.cpp"
@@ -1609,6 +1615,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\Ffa-A\PegAeSys\TCharDefs.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Text.h"
 				>
 			</File>
@@ -1860,6 +1870,14 @@
 						UsePrecompiledHeader="0"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="vc9mt|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\src\irrXML.h"
@@ -1908,6 +1926,14 @@
 						UsePrecompiledHeader="0"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="vc9mt|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\Vectorizer\ExGsSimpleDevice.h"
@@ -1940,6 +1966,14 @@
 						UsePrecompiledHeader="0"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="vc9mt|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\Vectorizer\GiConveyorGeometryDumper.h"
@@ -1966,6 +2000,14 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="vc9mtdbg|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="vc9mt|Win32"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -2008,6 +2050,14 @@
 						UsePrecompiledHeader="0"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="vc9mt|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\Adobe\acrobat.h"
@@ -2044,6 +2094,14 @@
 						UsePrecompiledHeader="0"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="vc9mt|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+					/>
+				</FileConfiguration>
 			</File>
 		</Filter>
 		<Filter
@@ -2070,6 +2128,14 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="vc9mtdbg|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="vc9mt|Win32"
 					>
 					<Tool
 						Name="VCCLCompilerTool"

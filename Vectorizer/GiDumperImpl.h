@@ -5,7 +5,7 @@
 
 #define STL_USING_IOSTREAM
 #include "OdaSTL.h"
-#include "TCharDefs.h"
+#include "../PegAeSys/TCharDefs.h"
 
 class OdGiDumperImpl : public OdGiDumper
 {

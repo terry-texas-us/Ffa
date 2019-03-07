@@ -6,7 +6,7 @@
 #include "GiConveyorGeometryDumper.h"
 
 #include <iostream>
-#include "TCharDefs.h"
+#include "../PegAeSys/TCharDefs.h"
 
 class ExSimpleView;
 
