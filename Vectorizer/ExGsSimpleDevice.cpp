@@ -1,7 +1,3 @@
-#include "..\\PegAeSys\\stdafx.h"
-
-#include "..\\PegAeSys\\PegAEsysDoc.h"
-
 #include "OdaCommon.h"
 
 #include "DbObject.h"
@@ -29,8 +25,6 @@ ExGsSimpleDevice::ExGsSimpleDevice()
 
 OdGsDevicePtr ExGsSimpleDevice::createObject(DeviceType type)
 {
-	std::_tostream* target = &std::_tcout;
-
   OdGsDevicePtr pRes = OdRxObjectImpl<ExGsSimpleDevice, OdGsDevice>::createObject();
   ExGsSimpleDevice* pMyDev = static_cast<ExGsSimpleDevice*>(pRes.get());
 
@@ -39,6 +33,7 @@ OdGsDevicePtr ExGsSimpleDevice::createObject(DeviceType type)
   /**********************************************************************/
   /* Create the output geometry dumper                                  */
   /**********************************************************************/  
+  std::_tostream* target = &std::_tcout;
   pMyDev->m_pDumper = OdGiDumperImpl::createObject(target);
   
   /**********************************************************************/
@@ -198,7 +193,6 @@ bool ExSimpleView::regenAbort() const
 void ExSimpleView::draw(const OdGiDrawable* pDrawable)
 {
 	OdDbObjectPtr pEnt = OdDbObject::cast(pDrawable);
-
 
   /**********************************************************************/
   /* The parent class version of this function must be called.          */
