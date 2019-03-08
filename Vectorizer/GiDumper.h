@@ -1,6 +1,4 @@
-
-#ifndef __OD_GI_DUMPER__
-#define __OD_GI_DUMPER__
+#pragma once
 
 class OdGiDumper : public OdRxObject
 {
@@ -16,13 +14,13 @@ public:
   virtual void outputColors(const OdUInt16* colors, OdInt32 count, const OdString& name) = 0;
   virtual void outputTrueColors(const OdCmEntityColor* trueColors, OdInt32 count, const OdString& name) = 0;
   virtual void outputIds(OdDbStub** ids, OdInt32 count, const OdString& name, const OdString& table) = 0;
-  virtual void outputSelectionMarkers(const OdInt32* selectionMarkers, OdInt32 count, const OdString& name) = 0;
+  virtual void outputSelectionMarkers(const OdGsMarker* selectionMarkers, OdInt32 count, const OdString& name) = 0;
   virtual void outputVisibility(const OdUInt8* visibility, OdInt32 count, const OdString& name) = 0;
+  virtual void outputMappers(const OdGiMapper* mappers, OdInt32 count, const OdString& name) = 0;
 
   virtual void pushIndent() = 0;
   virtual void popIndent() = 0;
+  virtual int currIndent() = 0; // For diagnostics
 };
 
 typedef OdSmartPtr<OdGiDumper> OdGiDumperPtr;
-
-#endif // __OD_GI_DUMPER__

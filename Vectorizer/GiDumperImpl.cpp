@@ -220,22 +220,6 @@ void OdGiDumperImpl::outputIds(OdDbStub** ids,
 /************************************************************************/
 /* Output selection markers                                             */
 /************************************************************************/
-void OdGiDumperImpl::outputSelectionMarkers(const OdInt32* selectionMarkers, 
-                                            OdInt32 numMarkers, 
-                                            const OdString& name)
-{
-  if (selectionMarkers)
-  {
-    output(name + OD_T(" Selection Markers") );
-    pushIndent();
-    OdInt32 i;
-    for (i = 0; i < numMarkers; i++)
-    {
-      output(toString(OdString(name) + OD_T("[%d]"), (int)i), toString((int)selectionMarkers[i]));
-    }
-  }
-}
-
 void OdGiDumperImpl::outputSelectionMarkers(const OdGsMarker* selectionMarkers, 
                                             OdInt32 numMarkers, 
                                             const OdString& name)
@@ -279,6 +263,31 @@ void OdGiDumperImpl::outputVisibility(const OdUInt8* visibility,
   }
 }
 
+void OdGiDumperImpl::outputMappers(const OdGiMapper* mappers, OdInt32 count, const OdString& name)
+{
+  if (mappers)
+  {
+    output(name + OD_T(" Mappers"));
+    pushIndent();
+    OdInt32 i;
+    for (i = 0; i < count; i++)
+    {
+      const OdGiMapper *pMapper = mappers + i;
+      const OdGeMatrix3d &transform = pMapper->transform();
+      OdString inName(toString(name + OD_T("[%d]"), (int)i));
+      output(inName + OD_T(" projection"),    toString(pMapper->projection()));
+      output(inName + OD_T(" uTiling"),       toString(pMapper->uTiling()));
+      output(inName + OD_T(" vTiling"),       toString(pMapper->vTiling()));
+      output(inName + OD_T(" autoTransform"), toString(pMapper->autoTransform()));
+      output(inName + OD_T(" transform"),     toString(OdGeQuaternion(transform[0][0], transform[0][1], transform[0][2], transform[0][3])));
+      output(inName + OD_T(" transform"),     toString(OdGeQuaternion(transform[1][0], transform[1][1], transform[1][2], transform[1][3])));
+      output(inName + OD_T(" transform"),     toString(OdGeQuaternion(transform[2][0], transform[2][1], transform[2][2], transform[2][3])));
+      output(inName + OD_T(" transform"),     toString(OdGeQuaternion(transform[3][0], transform[3][1], transform[3][2], transform[3][3])));
+    }
+    popIndent();
+  }
+}
+
 /************************************************************************/
 /* Output Face Data                                                     */
 /************************************************************************/
@@ -292,6 +301,8 @@ void OdGiDumperImpl::outputFaceData(const OdGiFaceData* pFaceData,
     outputIds(pFaceData->layerIds(),                      numFaces, OD_T("Face"), OD_T("Layers"));
     outputSelectionMarkers(pFaceData->selectionMarkers(), numFaces, OD_T("Face"));
     outputVisibility(pFaceData->visibility(),             numFaces, OD_T("Face"));
+    outputIds(pFaceData->materials(),                     numFaces, OD_T("Face"), OD_T("Materials"));
+    outputMappers(pFaceData->mappers(),                   numFaces, OD_T("Face"));
   }
 }
 /************************************************************************/

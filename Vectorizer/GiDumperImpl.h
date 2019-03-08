@@ -29,10 +29,11 @@ public:
   virtual void outputColors(const OdUInt16* colors, OdInt32 numColors, const OdString& name);
   virtual void outputTrueColors(const OdCmEntityColor* trueColors, OdInt32 numColors, const OdString& name);
   virtual void outputIds(OdDbStub** ids, OdInt32 numIds, const OdString& name, const OdString& table);
-  virtual void outputSelectionMarkers(const OdInt32* selectionMarkers, OdInt32 numMarkers, const OdString& name);
   virtual void outputSelectionMarkers(const OdGsMarker* selectionMarkers, OdInt32 numMarkers, const OdString& name);
   virtual void outputVisibility(const OdUInt8* visibility, OdInt32 count, const OdString& name);
+  virtual void outputMappers(const OdGiMapper* mappers, OdInt32 count, const OdString& name);
 
   virtual void pushIndent() { m_indentLevel += 2; }
   virtual void popIndent() { m_indentLevel -= 2; }
+  virtual int  currIndent() {return m_indentLevel;}
 };

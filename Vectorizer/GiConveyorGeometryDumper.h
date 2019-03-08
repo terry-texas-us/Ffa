@@ -60,9 +60,9 @@ public:
     const OdGePoint3d& thirdPoint,
     OdGiArcType arcType = kOdGiArcSimple, const OdGeVector3d* pExtrusion = 0);
   
-  /*void polylineProc(OdInt32 numPoints, const OdGePoint3d* vertexList,
+  void polylineProc(OdInt32 numPoints, const OdGePoint3d* vertexList,
     const OdGeVector3d* pNormal = 0,
-    const OdGeVector3d* pExtrusion = 0, OdInt32 baseSubEntMarker = -1);*/
+    const OdGeVector3d* pExtrusion = 0, OdGsMarker baseSubEntMarker = -1);
   
   void polygonProc(OdInt32 nbPoints, const OdGePoint3d* pVertexList,
     const OdGeVector3d* pNormal = 0,

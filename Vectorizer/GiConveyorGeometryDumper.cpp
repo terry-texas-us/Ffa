@@ -27,27 +27,26 @@ OdSharedPtr<OdGiConveyorGeometryDumper> OdGiConveyorGeometryDumper::createObject
 /************************************************************************/
 /* Process OdGiPolyline data                                            */
 /************************************************************************/
-void OdGiConveyorGeometryDumper::plineProc(const OdGiPolyline&,
-                                 const OdGeMatrix3d*,
-                                 OdUInt32,
-                                 OdUInt32)
+void OdGiConveyorGeometryDumper::plineProc(const OdGiPolyline& lwBuf,
+                                 const OdGeMatrix3d* pXform,
+                                 OdUInt32 fromIndex,
+                                 OdUInt32 numSegs)
 {
-	//m_pDumper->output(OD_T("Start plineProc"));
-	//m_pDumper->pushIndent();
-	//m_pDumper->output(OD_T("Xform"),      pXform);
-	//m_pDumper->output(OD_T("fromIndex"),  toString((int)fromIndex));
-	//m_pDumper->output(OD_T("numSegs"), toString((int)numSegs));
+	m_pDumper->output(OD_T("Start plineProc"));
+	m_pDumper->pushIndent();
+	m_pDumper->output(OD_T("Xform"),      pXform);
+	m_pDumper->output(OD_T("fromIndex"),  toString((int)fromIndex));
+	m_pDumper->output(OD_T("numSegs"), toString((int)numSegs));
 
-	//if (m_dumpLevel == Maximal_Simplification)
-	//{
-	//  m_pDumper->output(OD_T("Reduced pline data"));
-	//  m_pDumper->pushIndent();
-	//  OdGiGeometrySimplifier::plineProc(lwBuf, pXform, fromIndex, numSegs);
-	//  m_pDumper->popIndent();
-	//}
-
-	//m_pDumper->popIndent();
-	//m_pDumper->output(OD_T("End plineProc"));
+	if (m_dumpLevel == Maximal_Simplification)
+	{
+	  m_pDumper->output(OD_T("Reduced pline data"));
+	  m_pDumper->pushIndent();
+	  OdGiGeometrySimplifier::plineProc(lwBuf, pXform, fromIndex, numSegs);
+	  m_pDumper->popIndent();
+	}
+	m_pDumper->popIndent();
+	m_pDumper->output(OD_T("End plineProc"));
 }
 
 /************************************************************************/
@@ -55,12 +54,12 @@ void OdGiConveyorGeometryDumper::plineProc(const OdGiPolyline&,
 /************************************************************************/
 void OdGiConveyorGeometryDumper::polylineOut(OdInt32 numPoints, const OdGePoint3d* vertexList)
 {
-//  m_pDumper->output(OD_T("Start polylineOut"));
-//  m_pDumper->pushIndent();
-//  m_pDumper->output(OD_T("numPoints"),  toString((int)numPoints));
-//  m_pDumper->output(numPoints,    vertexList);
-//  m_pDumper->popIndent();
-//  m_pDumper->output(OD_T("End polylineOut"));
+  m_pDumper->output(OD_T("Start polylineOut"));
+  m_pDumper->pushIndent();
+  m_pDumper->output(OD_T("numPoints"),  toString((int)numPoints));
+  m_pDumper->output(numPoints,    vertexList);
+  m_pDumper->popIndent();
+  m_pDumper->output(OD_T("End polylineOut"));
 
 	CPnts pList;
 	for(int i = 0; i < numPoints; i++)
@@ -76,7 +75,7 @@ void OdGiConveyorGeometryDumper::polylineOut(OdInt32 numPoints, const OdGePoint3
 /************************************************************************/
 void OdGiConveyorGeometryDumper::polygonOut(OdInt32 numPoints, 
                                   const OdGePoint3d* vertexList, 
-                                  const OdGeVector3d* )//pNormal)
+                                  const OdGeVector3d* pNormal)
 {
 	m_pDumper->output(OD_T("Start polygonOut"));
 	m_pDumper->pushIndent();
@@ -89,29 +88,29 @@ void OdGiConveyorGeometryDumper::polygonOut(OdInt32 numPoints,
 /************************************************************************/
 /* Process simple polyline data                                         */
 /************************************************************************/
-//void OdGiConveyorGeometryDumper::polylineProc(OdInt32 numPoints,
-//                                const OdGePoint3d* vertexList,
-//                                const OdGeVector3d* pNormal,
-//                                const OdGeVector3d* pExtrusion,
-//                                OdInt32 baseSubEntMarker)
-//{
-//	m_pDumper->output(OD_T("Start polylineProc"));
-//	m_pDumper->pushIndent();
-//	m_pDumper->output(OD_T("normal"),           toString(pNormal));
-//	m_pDumper->output(OD_T("extrusion"),        toString(pExtrusion));
-//	m_pDumper->output(OD_T("baseSubEntMarker"), toString((int)baseSubEntMarker));
-//	m_pDumper->output(OD_T("numPoints"),        toString((int)numPoints));
-//	m_pDumper->output(numPoints,          vertexList);
-//	if (m_dumpLevel == Maximal_Simplification)
-//	{
-//		m_pDumper->output(OD_T("Reduced polyline data"));
-//		m_pDumper->pushIndent();
-//		OdGiGeometrySimplifier::polylineProc(numPoints, vertexList, pNormal, pExtrusion, baseSubEntMarker);
-//		m_pDumper->popIndent();
-//	}
-//	m_pDumper->popIndent();
-//	m_pDumper->output(OD_T("End polylineProc"));
-//}
+void OdGiConveyorGeometryDumper::polylineProc(OdInt32 numPoints,
+                                const OdGePoint3d* vertexList,
+                                const OdGeVector3d* pNormal,
+                                const OdGeVector3d* pExtrusion,
+                                OdGsMarker baseSubEntMarker)
+{
+	m_pDumper->output(OD_T("Start polylineProc"));
+	m_pDumper->pushIndent();
+	m_pDumper->output(OD_T("normal"),           toString(pNormal));
+	m_pDumper->output(OD_T("extrusion"),        toString(pExtrusion));
+	m_pDumper->output(OD_T("baseSubEntMarker"), toString((int)baseSubEntMarker));
+	m_pDumper->output(OD_T("numPoints"),        toString((int)numPoints));
+	m_pDumper->output(numPoints,          vertexList);
+	if (m_dumpLevel == Maximal_Simplification)
+	{
+		m_pDumper->output(OD_T("Reduced polyline data"));
+		m_pDumper->pushIndent();
+		OdGiGeometrySimplifier::polylineProc(numPoints, vertexList, pNormal, pExtrusion, baseSubEntMarker);
+		m_pDumper->popIndent();
+	}
+	m_pDumper->popIndent();
+	m_pDumper->output(OD_T("End polylineProc"));
+}
 
 /************************************************************************/
 /* Process polygon data                                                 */
@@ -137,6 +136,7 @@ void OdGiConveyorGeometryDumper::polygonProc(OdInt32 numPoints,
 	m_pDumper->popIndent();
 	m_pDumper->output(OD_T("End polygonProc"));
 }
+
 /************************************************************************/
 /* Process center-radius circle data                                    */
 /************************************************************************/
@@ -175,6 +175,7 @@ void OdGiConveyorGeometryDumper::circleProc(const OdGePoint3d& firstPoint,
 	OdGiConveyorGeometryDumper::circleProc(circ.center(), circ.radius(),
                                circ.normal(), pExtrusion);
 }
+
 /************************************************************************/
 /* Process center-radius circular arc                                  */
 /************************************************************************/
@@ -269,6 +270,7 @@ void OdGiConveyorGeometryDumper::meshProc(OdInt32 rows,
 	m_pDumper->outputEdgeData(pEdgeData, ((rows - 1) * columns) + ((columns - 1) * rows));
 	m_pDumper->outputFaceData(pFaceData, (rows - 1) * (columns - 1));
 	m_pDumper->outputVertexData(pVertexData, rows * columns);
+    m_pDumper->popIndent();
 
 	if (m_dumpLevel == Maximal_Simplification)
 	{
@@ -436,6 +438,7 @@ void OdGiConveyorGeometryDumper::rayProc(const OdGePoint3d& basePoint, const OdG
 	m_pDumper->pushIndent();
 	m_pDumper->output(OD_T("basePoint"), toString(basePoint));
 	m_pDumper->output(OD_T("throughPoint"), toString(throughPoint));
+	
 	if (m_dumpLevel == Maximal_Simplification)
 	{
 		m_pDumper->output(OD_T("Reduced ray data"));
@@ -489,6 +492,7 @@ void OdGiConveyorGeometryDumper::nurbsProc(const OdGeNurbCurve3d& nurbs)
     nurbs.getFitPointAt(i, point);
     m_pDumper->output(toString(OD_T("Fit point[%d]"), i), toString(point));
   }
+  m_pDumper->popIndent();
 
   if (nurbs.isRational())
   {
